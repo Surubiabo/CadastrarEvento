@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastrarEvento.Views.CadastrarEvento" NavigationPage.HasNavigationBar="false">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Label Text="Contratação do Evento" HorizontalOptions="Center"/>
+            <Entry x:Name="txt_nameEvent" Placeholder="Nome do Evento" TextColor="#4c4f69" FontFamily="StackSansHeadline-VariableFont_wght"/>
+
+            <Frame>
+                <VerticalStackLayout HorizontalOptions="Center">
+                    <HorizontalStackLayout>
+
+                        <Label Text="Data de Início" Margin="10" TextColor="#4c4f69" FontFamily="StackSansHeadline-VariableFont_wght"></Label>
+                        <DatePicker x:Name="dtpck_I" DateSelected="dtpck_I_DateSelected"   Format="dd/MM/yyyy" Margin="10" TextColor="#4c4f69" FontFamily="StackSansHeadline-VariableFont_wght"></DatePicker>
+
+                        <Label Text="Data de Término" Margin="10" TextColor="#4c4f69" FontFamily="StackSansHeadline-VariableFont_wght"/>
+                        <DatePicker x:Name="dtpck_F"  Format="dd/MM/yyyy" Margin="10" TextColor="#4c4f69" FontFamily="StackSansHeadline-VariableFont_wght"></DatePicker>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame>
+                    <VerticalStackLayout>
+                    <Grid ColumnDefinitions="*,*,*" RowDefinitions="*">
+
+
+                        <Label Text="Número de Participantes: " Grid.Row="0" Grid.Column="0" TextColor="#4c4f69" FontFamily="StackSansHeadline-VariableFont_wght"></Label>
+
+                            <Label Text="{Binding Value}" BindingContext="{x:Reference stp_Np}"   Grid.Column="1" Grid.Row="0"/>
+
+
+
+                            <Stepper Margin="25"
+                        Minimum="0"
+                        Maximum="50"
+                        Increment="1"
+                        x:Name="stp_Np"/>
+
+                    </Grid>
+                    <Entry x:Name="txt_eventplace" Placeholder="Local do Evento" TextColor="#4c4f69" FontFamily="StackSansHeadline-VariableFont_wght"/>
+                    <Button Text="Avançar" Clicked="Button_Clicked"  BackgroundColor="#7287fd" FontFamily="StackSansHeadline-VariableFont_wght"/>
+                        
+                </VerticalStackLayout>
+            </Frame>
+
+            
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

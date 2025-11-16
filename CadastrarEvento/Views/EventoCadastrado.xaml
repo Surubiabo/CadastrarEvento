@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastrarEvento.Views.EventoCadastrado"
+             Title="EventoCadastrado" NavigationPage.HasNavigationBar="false">
+    <VerticalStackLayout>
+        <Label 
+
+    Text="{Binding Nome}" 
+    TextColor="#4c4f69"
+    FontFamily="StackSansHeadline-VariableFont_wght"
+    FontSize="20"
+    HorizontalTextAlignment="Center"/>
+
+        <Frame Margin="10">
+            <HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Local do evento: " TextColor="#4c4f69" FontFamily="StackSansHeadline-VariableFont_wght"/>
+                    <Label Text="{Binding Local}" TextColor="#4c4f69" FontFamily="StackSansHeadline-VariableFont_wght"/>
+                </HorizontalStackLayout>
+
+            </HorizontalStackLayout>
+        </Frame>
+
+
+        <Frame Margin="10">
+                <HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label Text="Número de Participantes: " TextColor="#4c4f69" FontFamily="StackSansHeadline-VariableFont_wght"/>
+                        <Label Text="{Binding Conv}" TextColor="#4c4f69" FontFamily="StackSansHeadline-VariableFont_wght"/>
+                    </HorizontalStackLayout>
+
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame Margin="10">
+                <Grid ColumnDefinitions="*,*,*" RowDefinitions="auto,auto">
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Data de Início" TextColor="#4c4f69" FontFamily="StackSansHeadline-VariableFont_wght"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="Data de Término" TextColor="#4c4f69" FontFamily="StackSansHeadline-VariableFont_wght"/>
+                <Label Grid.Row="0" Grid.Column="2" Text="Duração Total" TextColor="#4c4f69" FontFamily="StackSansHeadline-VariableFont_wght"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Text="{Binding DpckI, StringFormat='{0:dd/MM/yyyy}'}" TextColor="#4c4f69" FontFamily="StackSansHeadline-VariableFont_wght"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding DpckF, StringFormat='{0:dd/MM/yyyy}'}" TextColor="#4c4f69" FontFamily="StackSansHeadline-VariableFont_wght"/>
+                <Label Grid.Row="1" Grid.Column="2" Text="{Binding Duracao}" TextColor="#4c4f69" FontFamily="StackSansHeadline-VariableFont_wght"/>
+
+                </Grid>
+            </Frame>
+
+            <Frame Margin="10">
+                <HorizontalStackLayout>
+                <Label Text="Valor: " TextColor="#4c4f69" FontFamily="StackSansHeadline-VariableFont_wght"/>
+                <Label Text= "{Binding Valor, StringFormat='{}{0:c}'}" TextColor="#4c4f69" FontFamily="StackSansHeadline-VariableFont_wght"/>
+                </HorizontalStackLayout>
+            </Frame>
+
+        <Button Text="Voltar"  BackgroundColor="#7287fd" Clicked="Button_Clicked" HorizontalOptions="Center" FontFamily="StackSansHeadline-VariableFont_wght"/> 
+    </VerticalStackLayout>
+</ContentPage>
